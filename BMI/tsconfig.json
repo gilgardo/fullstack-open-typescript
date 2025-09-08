@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  }
+}
