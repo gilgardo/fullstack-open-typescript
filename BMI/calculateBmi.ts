@@ -1,4 +1,4 @@
-import { isStringNumber } from "./utils";
+import { isStringNumber } from "./utils.ts";
 
 const calculateBmi = (height: number, weight: number) =>
   weight / Math.pow(height / 100, 2);
@@ -40,10 +40,14 @@ const parseArguments = (args: string[]): { height: number; weight: number } => {
   }
 };
 
+const main = (height: number, weight: number) => {
+  const bmi = calculateBmi(height, weight);
+  return evaluateBmi(bmi);
+};
+
 try {
   const { height, weight } = parseArguments(process.argv);
-  const bmi = calculateBmi(height, weight);
-  console.log(evaluateBmi(bmi));
+  console.log(main(height, weight));
 } catch (error: unknown) {
   let errorMessage = "Something bad happened.";
   if (error instanceof Error) {
@@ -51,3 +55,5 @@ try {
   }
   console.log(errorMessage);
 }
+
+export default main;

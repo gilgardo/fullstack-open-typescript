@@ -27,7 +27,6 @@ const getRatingAndDesc = (avg: number, target: number) => {
 
   return { rating, ratingDescription };
 };
-
 const evaluateData = (data: number[], target: number): Result => {
   const average = data.reduce((tot, cur) => tot + cur, 0) / data.length;
   const { rating, ratingDescription } = getRatingAndDesc(average, target);
@@ -70,3 +69,5 @@ try {
   }
   console.log(errorMessage);
 }
+
+export default evaluateData;
